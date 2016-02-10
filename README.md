@@ -1,6 +1,6 @@
 # iOS Signature Capture 
 
-iOS Signature Capture helps to capture the user signature and it supports both Objective-C and Swift languages.
+iOS Signature Capture helps to capture the user signature with name and date and it supports both Objective-C and Swift languages.
 
 
 ##Features :
@@ -29,17 +29,23 @@ iOS Signature Capture helps to capture the user signature and it supports both O
 
 [screen_1]: https://github.com/vigneshuvi/iOS-Signature-Capture/blob/master/Screenshots/screen_1.png
 
-######Capture the signature
+######Draw the signature
 
 ![alt text][screen_2]
 
 [screen_2]: https://github.com/vigneshuvi/iOS-Signature-Capture/blob/master/Screenshots/screen_2.png
 
-######After capture teh signature
+######Prombt for the name and date
 
 ![alt text][screen_3]
 
 [screen_3]: https://github.com/vigneshuvi/iOS-Signature-Capture/blob/master/Screenshots/screen_3.png
+
+######After capture teh signature
+
+![alt text][screen_4]
+
+[screen_4]: https://github.com/vigneshuvi/iOS-Signature-Capture/blob/master/Screenshots/screen_4.png
 
 
 

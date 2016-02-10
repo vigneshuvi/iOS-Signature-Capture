@@ -27,24 +27,75 @@
 }
 
 -(IBAction)captureSign:(id)sender {
-    [self startSampleProcess];
-    [self.navigationController popToRootViewControllerAnimated:YES];
+    //display an alert to capture the person's name
+    
+    UIAlertController * alertView=   [UIAlertController
+                                  alertControllerWithTitle:@"Saving signature with name"
+                                  message:@"Please enter your name"
+                                  preferredStyle:UIAlertControllerStyleAlert];
+    
+    [alertView addTextFieldWithConfigurationHandler:^(UITextField *textField) {
+        textField.placeholder = @"Name";
+
+    }];
+    
+    [alertView addTextFieldWithConfigurationHandler:^(UITextField *textField) {
+        textField.placeholder = @"Date(DD/MM/YYYY)";
+        
+    }];
+    
+    UIAlertAction* yesButton = [UIAlertAction
+                                actionWithTitle:@"Yes, please"
+                                style:UIAlertActionStyleDefault
+                                handler:^(UIAlertAction * action)
+                                {
+                                    //Handel your yes please button action here
+                                    UITextField *textField = alertView.textFields[0];
+                                    userName = textField.text;
+                                    UITextField *datetextField = alertView.textFields[1];
+                                    signedDate  = datetextField.text;
+                                    if(userName != nil && ![userName isEqualToString:@""] && signedDate != nil  && ![signedDate isEqualToString:@""])
+                                    {
+                                        [self startSampleProcess];
+                                        [self.navigationController popToRootViewControllerAnimated:YES];
+                                    }
+                                   
+                                }];
+    UIAlertAction* noButton = [UIAlertAction
+                               actionWithTitle:@"No, thanks"
+                               style:UIAlertActionStyleDefault
+                               handler:^(UIAlertAction * action)
+                               {
+                                   //Handel no, thanks button
+                                   [alertView dismissViewControllerAnimated:YES completion:nil];
+                               }];
+    
+    [alertView addAction:yesButton];
+    [alertView addAction:noButton];
+    [self presentViewController:alertView animated:YES completion:nil];
+
+
 }
 
-- (UIImage *) imageWithView:(UIView *)view
+- (UIImage *) imageWithView:(UIView *)view text:(NSString*)text
 {
     UIGraphicsBeginImageContextWithOptions(view.bounds.size, view.opaque, 0.0);
     [view.layer renderInContext:UIGraphicsGetCurrentContext()];
     
-    UIImage * img = UIGraphicsGetImageFromCurrentImageContext();
+    NSDictionary *attributes = @{NSFontAttributeName           : [UIFont systemFontOfSize:17],
+                                 NSStrokeWidthAttributeName    : @(0),
+                                 NSStrokeColorAttributeName    : [UIColor blackColor]};
+    [text drawAtPoint:CGPointMake(view.frame.origin.x+20 , view.frame.size.height-30) withAttributes:attributes];
     
+    UIImage * img = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     
     return img;
 }
 
 -(void)startSampleProcess {
-    [self.delegate processCompleted:[self imageWithView:self.signatureView]];
+    UIImage *captureImage = [self imageWithView:self.signatureView text:[NSString stringWithFormat:@"By: %@ - %@",userName,signedDate]];
+    [self.delegate processCompleted:captureImage];
 }
 
 

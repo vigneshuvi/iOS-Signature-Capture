@@ -19,6 +19,7 @@
 @interface CaptureSignatureViewController : UIViewController {
     // Delegate to respond back
     id <CaptureSignatureViewDelegate> _delegate;
+    NSString *userName, *signedDate;
 }
 
 @property (nonatomic,strong) id delegate;
@@ -28,5 +29,4 @@
 - (IBAction)captureSign:(id)sender;
 
 @property (strong, nonatomic) IBOutlet UIButton *captureButton;
-
 @end
