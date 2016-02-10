@@ -23,13 +23,19 @@ iOS Signature Capture helps to capture the user signature and it supports both O
 ####3. Screenshots
 
 
+######Before capture the signature
+
 ![alt text][screen_1]
 
 [screen_1]: https://github.com/vigneshuvi/iOS-Signature-Capture/blob/master/Screenshots/screen_1.png
 
+######Capture the signature
+
 ![alt text][screen_2]
 
 [screen_2]: https://github.com/vigneshuvi/iOS-Signature-Capture/blob/master/Screenshots/screen_2.png
+
+######After capture teh signature
 
 ![alt text][screen_3]
 
