@@ -25,15 +25,15 @@ iOS Signature Capture helps to capture the user signature and it supports both O
 
 ![alt text][screen_1]
 
-[screen_1]: https://github.com/vigneshuvi/iOS-Signature-Capture/Screenshots/screen_1.png
+[screen_1]: https://github.com/vigneshuvi/iOS-Signature-Capture/blob/master/Screenshots/screen_1.png
 
 ![alt text][screen_2]
 
-[screen_2]: https://github.com/vigneshuvi/node-webservice-manager/Screenshots/screen_2.png
+[screen_2]: https://github.com/vigneshuvi/iOS-Signature-Capture/blob/master/Screenshots/screen_2.png
 
 ![alt text][screen_3]
 
-[screen_3]: https://github.com/vigneshuvi/node-webservice-manager/Screenshots/screen_3.png
+[screen_3]: https://github.com/vigneshuvi/iOS-Signature-Capture/blob/master/Screenshots/screen_3.png
 
 
 
