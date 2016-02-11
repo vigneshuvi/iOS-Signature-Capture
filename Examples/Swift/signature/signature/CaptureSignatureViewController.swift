@@ -46,8 +46,6 @@ class CaptureSignatureViewController: UIViewController {
             //Handel your yes please button action here
             let textField:UITextField = (alertView.textFields?[0])!;
             self.username = textField.text;
-            let datetextField:UITextField = (alertView.textFields?[1])!;
-            self.signedDate  = datetextField.text;
             
             let dateFormatter:NSDateFormatter = NSDateFormatter();
             dateFormatter.dateFormat = "dd/MM/yyyy"
