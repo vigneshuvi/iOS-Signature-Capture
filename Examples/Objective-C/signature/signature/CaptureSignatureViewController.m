@@ -39,11 +39,6 @@
 
     }];
     
-    [alertView addTextFieldWithConfigurationHandler:^(UITextField *textField) {
-        textField.placeholder = @"Date(DD/MM/YYYY)";
-        
-    }];
-    
     UIAlertAction* yesButton = [UIAlertAction
                                 actionWithTitle:@"Yes, please"
                                 style:UIAlertActionStyleDefault
@@ -52,10 +47,13 @@
                                     //Handel your yes please button action here
                                     UITextField *textField = alertView.textFields[0];
                                     userName = textField.text;
-                                    UITextField *datetextField = alertView.textFields[1];
-                                    signedDate  = datetextField.text;
+                                    
+                                    NSDateFormatter *dateFormatter=[[NSDateFormatter alloc] init];
+                                    [dateFormatter setDateFormat:@"dd/MM/yyyy"];
+                                    signedDate  = [dateFormatter stringFromDate:[NSDate date]];
                                     if(userName != nil && ![userName isEqualToString:@""] && signedDate != nil  && ![signedDate isEqualToString:@""])
                                     {
+                                        [alertView dismissViewControllerAnimated:YES completion:nil];
                                         [self startSampleProcess];
                                         [self.navigationController popToRootViewControllerAnimated:YES];
                                     }
@@ -82,10 +80,11 @@
     UIGraphicsBeginImageContextWithOptions(view.bounds.size, view.opaque, 0.0);
     [view.layer renderInContext:UIGraphicsGetCurrentContext()];
     
-    NSDictionary *attributes = @{NSFontAttributeName           : [UIFont systemFontOfSize:17],
+    // Setup the font specific variables
+    NSDictionary *attributes = @{NSFontAttributeName           : [UIFont fontWithName:@"Helvetica" size:12],
                                  NSStrokeWidthAttributeName    : @(0),
                                  NSStrokeColorAttributeName    : [UIColor blackColor]};
-    [text drawAtPoint:CGPointMake(view.frame.origin.x+20 , view.frame.size.height-30) withAttributes:attributes];
+    [text drawAtPoint:CGPointMake(view.frame.origin.x+10 , view.frame.size.height-25) withAttributes:attributes];
     
     UIImage * img = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();

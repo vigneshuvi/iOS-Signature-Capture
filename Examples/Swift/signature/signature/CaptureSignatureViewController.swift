@@ -32,13 +32,6 @@ class CaptureSignatureViewController: UIViewController {
             textField.placeholder = "Name";
         }
         
-        //Add a text field
-        alertView.addTextFieldWithConfigurationHandler { textField -> Void in
-            //TextField configuration
-            textField.textColor = UIColor.blackColor()
-             textField.placeholder = "Date(DD/MM/YYYY)";
-        }
-        
         //Create and add the Cancel action
         let cancelAction: UIAlertAction = UIAlertAction(title: "No, thanks", style: .Cancel) { action -> Void in
             //Do some stuff
@@ -55,6 +48,11 @@ class CaptureSignatureViewController: UIViewController {
             self.username = textField.text;
             let datetextField:UITextField = (alertView.textFields?[1])!;
             self.signedDate  = datetextField.text;
+            
+            let dateFormatter:NSDateFormatter = NSDateFormatter();
+            dateFormatter.dateFormat = "dd/MM/yyyy"
+            self.signedDate  = dateFormatter.stringFromDate(NSDate());
+            
             if(self.username != nil && !self.username!.isEqualToString("") && self.signedDate != nil  && !self.signedDate!.isEqualToString(""))
             {
                 alertView.dismissViewControllerAnimated(true, completion: nil);
