@@ -7,7 +7,9 @@ iOS Signature Capture helps to capture the user signature with name and date and
 
     1. Supports Objective-C and Swift
     2. Delegate implemation between two viewcontrollers
-    3. Screenshots
+    3. Delete the signature
+    4. Sample projects
+    5. Screenshots
     
 
 
@@ -20,7 +22,18 @@ iOS Signature Capture helps to capture the user signature with name and date and
     Capture images pass to previous view controller used custom delegate methods. 
 
 
-####3. Screenshots
+####3. Delete the signature
+	
+	Signed signature will be able to delete while shake the device,
+	 long press yhe view and double tap the view.
+
+
+####4. Sample projects
+	
+	The sample projects will be helpful to integrade the libarary code into your projects.
+
+
+####5. Screenshots
 
 
 ######Before capture the signature
@@ -51,7 +64,10 @@ iOS Signature Capture helps to capture the user signature with name and date and
 
 #### Do you like it?
 
-Do you like this repo? Share it on Twitter, Facebook, Google+ or anywhere you like so that more of us can use it and help. Thanks!
+Do you like this repo? Share it on Twitter, Facebook,
+Google+ or anywhere you like so that more of us can use it and help.
+
+Thanks!
 
 Created by [Vignesh](http://vigneshuvi.github.io/) 
 

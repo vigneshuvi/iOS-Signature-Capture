@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B8B175D1C6CB74800F30DF1 /* UviSignatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8B175C1C6CB74800F30DF1 /* UviSignatureView.swift */; };
 		0BD2FB1D1C6B4FEA00351FC5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD2FB1C1C6B4FEA00351FC5 /* AppDelegate.swift */; };
 		0BD2FB1F1C6B4FEA00351FC5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD2FB1E1C6B4FEA00351FC5 /* ViewController.swift */; };
 		0BD2FB221C6B4FEA00351FC5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BD2FB201C6B4FEA00351FC5 /* Main.storyboard */; };
@@ -15,7 +16,6 @@
 		0BD2FB321C6B4FEB00351FC5 /* signatureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD2FB311C6B4FEB00351FC5 /* signatureTests.swift */; };
 		0BD2FB3D1C6B4FEB00351FC5 /* signatureUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD2FB3C1C6B4FEB00351FC5 /* signatureUITests.swift */; };
 		0BD2FB521C6B508600351FC5 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BD2FB511C6B508600351FC5 /* icon.png */; };
-		0BD2FB571C6B53B100351FC5 /* UviSignatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD2FB561C6B53B100351FC5 /* UviSignatureView.swift */; };
 		0BD2FB5A1C6B5F0300351FC5 /* CaptureSignatureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD2FB591C6B5F0300351FC5 /* CaptureSignatureViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0B8B175C1C6CB74800F30DF1 /* UviSignatureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UviSignatureView.swift; path = ../../../../Lib/Swift/UviSignatureView.swift; sourceTree = "<group>"; };
 		0BD2FB191C6B4FEA00351FC5 /* signature.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = signature.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BD2FB1C1C6B4FEA00351FC5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0BD2FB1E1C6B4FEA00351FC5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -51,7 +52,6 @@
 		0BD2FB3C1C6B4FEB00351FC5 /* signatureUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = signatureUITests.swift; sourceTree = "<group>"; };
 		0BD2FB3E1C6B4FEB00351FC5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0BD2FB511C6B508600351FC5 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
-		0BD2FB561C6B53B100351FC5 /* UviSignatureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UviSignatureView.swift; path = UviSignatureView/UviSignatureView.swift; sourceTree = "<group>"; };
 		0BD2FB591C6B5F0300351FC5 /* CaptureSignatureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaptureSignatureViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -176,7 +176,7 @@
 		0BD2FB551C6B537F00351FC5 /* SignatureView */ = {
 			isa = PBXGroup;
 			children = (
-				0BD2FB561C6B53B100351FC5 /* UviSignatureView.swift */,
+				0B8B175C1C6CB74800F30DF1 /* UviSignatureView.swift */,
 			);
 			name = SignatureView;
 			sourceTree = "<group>";
@@ -322,9 +322,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				0BD2FB5A1C6B5F0300351FC5 /* CaptureSignatureViewController.swift in Sources */,
+				0B8B175D1C6CB74800F30DF1 /* UviSignatureView.swift in Sources */,
 				0BD2FB1F1C6B4FEA00351FC5 /* ViewController.swift in Sources */,
 				0BD2FB1D1C6B4FEA00351FC5 /* AppDelegate.swift in Sources */,
-				0BD2FB571C6B53B100351FC5 /* UviSignatureView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -551,6 +551,7 @@
 				0BD2FB431C6B4FEB00351FC5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0BD2FB441C6B4FEB00351FC5 /* Build configuration list for PBXNativeTarget "signatureTests" */ = {
 			isa = XCConfigurationList;
@@ -559,6 +560,7 @@
 				0BD2FB461C6B4FEB00351FC5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0BD2FB471C6B4FEB00351FC5 /* Build configuration list for PBXNativeTarget "signatureUITests" */ = {
 			isa = XCConfigurationList;
@@ -567,6 +569,7 @@
 				0BD2FB491C6B4FEB00351FC5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

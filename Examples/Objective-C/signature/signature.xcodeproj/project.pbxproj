@@ -15,9 +15,9 @@
 		0BDA12AB1C6B17EC00B26797 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BDA12A91C6B17EC00B26797 /* LaunchScreen.storyboard */; };
 		0BDA12B61C6B17EC00B26797 /* signatureTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BDA12B51C6B17EC00B26797 /* signatureTests.m */; };
 		0BDA12C11C6B17EC00B26797 /* signatureUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BDA12C01C6B17EC00B26797 /* signatureUITests.m */; };
-		0BDA12D31C6B185100B26797 /* UviSignatureView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BDA12D21C6B185100B26797 /* UviSignatureView.m */; };
 		0BDA12D91C6B1CAC00B26797 /* CaptureSignatureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BDA12D81C6B1CAC00B26797 /* CaptureSignatureViewController.m */; };
 		0BDA12DF1C6B2E4200B26797 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BDA12DE1C6B2E4200B26797 /* icon.png */; };
+		0BDF14281C6DCEAB00C8E03D /* UviSignatureView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BDF14271C6DCEAB00C8E03D /* UviSignatureView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,11 +54,11 @@
 		0BDA12BC1C6B17EC00B26797 /* signatureUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = signatureUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BDA12C01C6B17EC00B26797 /* signatureUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = signatureUITests.m; sourceTree = "<group>"; };
 		0BDA12C21C6B17EC00B26797 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0BDA12D11C6B185100B26797 /* UviSignatureView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UviSignatureView.h; path = UviSignatureView/UviSignatureView.h; sourceTree = "<group>"; };
-		0BDA12D21C6B185100B26797 /* UviSignatureView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UviSignatureView.m; path = UviSignatureView/UviSignatureView.m; sourceTree = "<group>"; };
 		0BDA12D71C6B1CAC00B26797 /* CaptureSignatureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CaptureSignatureViewController.h; sourceTree = "<group>"; };
 		0BDA12D81C6B1CAC00B26797 /* CaptureSignatureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CaptureSignatureViewController.m; sourceTree = "<group>"; };
 		0BDA12DE1C6B2E4200B26797 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		0BDF14261C6DCEAB00C8E03D /* UviSignatureView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UviSignatureView.h; path = "../../../../Lib/Objective-C/UviSignatureView.h"; sourceTree = "<group>"; };
+		0BDF14271C6DCEAB00C8E03D /* UviSignatureView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UviSignatureView.m; path = "../../../../Lib/Objective-C/UviSignatureView.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,8 +105,8 @@
 		0BD2FB4E1C6B504500351FC5 /* SignatureView */ = {
 			isa = PBXGroup;
 			children = (
-				0BDA12D11C6B185100B26797 /* UviSignatureView.h */,
-				0BDA12D21C6B185100B26797 /* UviSignatureView.m */,
+				0BDF14261C6DCEAB00C8E03D /* UviSignatureView.h */,
+				0BDF14271C6DCEAB00C8E03D /* UviSignatureView.m */,
 			);
 			name = SignatureView;
 			sourceTree = "<group>";
@@ -340,10 +340,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0BDF14281C6DCEAB00C8E03D /* UviSignatureView.m in Sources */,
 				0BDA12A31C6B17EC00B26797 /* ViewController.m in Sources */,
 				0BDA12A01C6B17EC00B26797 /* AppDelegate.m in Sources */,
 				0BDA12D91C6B1CAC00B26797 /* CaptureSignatureViewController.m in Sources */,
-				0BDA12D31C6B185100B26797 /* UviSignatureView.m in Sources */,
 				0BDA129D1C6B17EC00B26797 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
