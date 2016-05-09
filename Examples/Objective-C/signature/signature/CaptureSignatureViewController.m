@@ -26,6 +26,29 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(BOOL)canBecomeFirstResponder {
+    return YES;
+}
+
+-(void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [self becomeFirstResponder];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [self resignFirstResponder];
+    [super viewWillDisappear:animated];
+}
+
+- (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event
+{
+    if (motion == UIEventSubtypeMotionShake)
+    {
+        // your code
+    }
+}
+
+
 -(IBAction)captureSign:(id)sender {
     //display an alert to capture the person's name
     
@@ -54,6 +77,7 @@
                                     if(userName != nil && ![userName isEqualToString:@""] && signedDate != nil  && ![signedDate isEqualToString:@""])
                                     {
                                         [alertView dismissViewControllerAnimated:YES completion:nil];
+                                        [self.signatureView captureSignature];
                                         [self startSampleProcess];
                                         [self.navigationController popToRootViewControllerAnimated:YES];
                                     }
@@ -93,7 +117,7 @@
 }
 
 -(void)startSampleProcess {
-    UIImage *captureImage = [self imageWithView:self.signatureView text:[NSString stringWithFormat:@"By: %@ - %@",userName,signedDate]];
+    UIImage *captureImage = [self.signatureView signatureImage];
     [self.delegate processCompleted:captureImage];
 }
 

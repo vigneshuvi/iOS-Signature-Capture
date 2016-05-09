@@ -57,6 +57,83 @@ static CGPoint midpoint(CGPoint p0, CGPoint p1) {
     
 }
 
+- (void)captureSignature {
+    [pathArray addObject:signPath];
+}
+
+- (UIImage *)signatureImage {
+    UIGraphicsBeginImageContext(self.bounds.size);
+    
+    for (UIBezierPath *path in self.pathArray) {
+        [self.lineColor setStroke];
+        [path stroke];
+    }
+
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return image;
+}
+
+- (UIColor *)lineColor {
+    if (_lineColor == nil) {
+        _lineColor = [UIColor blackColor];
+    }
+    return _lineColor;
+}
+
+- (CGFloat)lineWidth {
+    if (_lineWidth == 0) {
+        _lineWidth = 1;
+    }
+    return _lineWidth;
+}
+
+- (NSMutableArray *)pathArray {
+    if (pathArray == nil) {
+        pathArray = [NSMutableArray new];
+    }
+    return pathArray;
+}
+
+- (CGPoint)placeholderPoint {
+    CGFloat height = self.bounds.size.height;
+    
+    CGFloat bottom = 0.90;
+    
+    CGFloat x1 = 0;
+    
+    CGFloat y1 = height*bottom;
+    UIFont *font = [UIFont fontWithName:@"Helvetica" size:12];
+    return (CGPoint){x1, y1 - 5 - font.pointSize + font.descender};
+}
+
+- (NSArray *)backgroundLines {
+    if (backgroundLines == nil) {
+        CGFloat width = self.bounds.size.width;
+        CGFloat height = self.bounds.size.height;
+        
+        UIBezierPath *path = [UIBezierPath bezierPath];
+        
+        CGFloat bottom = 0.90;
+        {
+            CGFloat x1 = 0;
+            CGFloat x2 = width;
+            
+            CGFloat y1 = height*bottom;
+            CGFloat y2 = height*bottom;
+            
+            [path moveToPoint:CGPointMake(x1, y1)];
+            [path addLineToPoint:CGPointMake(x2, y2)];
+        }
+        
+        backgroundLines = @[path];
+    }
+    return backgroundLines;
+}
+
+
+
 
 // Erase the Siganture view by initial the new path.
 - (void)erase {
@@ -99,9 +176,34 @@ static CGPoint midpoint(CGPoint p0, CGPoint p1) {
     [self setNeedsDisplay]; // Update the view.
 }
 
+
+- (BOOL)signatureExists {
+    return self.pathArray.count > 0;
+}
+
 // Setup the stroke color.
+
 - (void)drawRect:(CGRect)rect {
-    [[UIColor blackColor] setStroke];
+    [[UIColor whiteColor] setFill];
+    CGContextFillRect(UIGraphicsGetCurrentContext(), rect);
+    
+    for (UIBezierPath *path in self.backgroundLines) {
+        [[[UIColor blackColor] colorWithAlphaComponent:0.2] setStroke];
+        [path stroke];
+    }
+    
+    if (![self signatureExists] && (!signPath || [signPath isEmpty])) {
+        [@"Sign here" drawAtPoint:[self placeholderPoint]
+                                                                withAttributes:@{ NSFontAttributeName : [UIFont fontWithName:@"Helvetica" size:12],
+                                                                                  NSForegroundColorAttributeName : [[UIColor blackColor] colorWithAlphaComponent:0.2]}];
+    }
+    
+    for (UIBezierPath *path in self.pathArray) {
+        [self.lineColor setStroke];
+        [path stroke];
+    }
+    
+    [self.lineColor setStroke];
     [signPath stroke];
 }
 
