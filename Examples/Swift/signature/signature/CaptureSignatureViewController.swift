@@ -55,7 +55,8 @@ class CaptureSignatureViewController: UIViewController {
             {
                 alertView.dismissViewControllerAnimated(true, completion: nil);
                 if let delegate = self.delegate {
-                    let signedImage = self.imageWithView(self.signatureView, text:String(format:"By: %@, %@", self.username!, self.signedDate!));
+                    self.signatureView.captureSignature();
+                    let signedImage = self.signatureView.signatureImage(String(format:"By: %@, %@", self.username!, self.signedDate!), position: CGPointMake(self.signatureView.frame.origin.x+10, self.signatureView.frame.size.height-25))
 
                     delegate.processCompleted(signedImage);
                 }
@@ -81,25 +82,6 @@ class CaptureSignatureViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    
-    func imageWithView(view : UIView, text : NSString) -> UIImage
-    {
-        UIGraphicsBeginImageContextWithOptions(view.bounds.size, view.opaque, 0.0);
-        view.layer.renderInContext(UIGraphicsGetCurrentContext()!);
-        
-        // Setup the font specific variables
-        let attributes :[String:AnyObject] = [
-            NSFontAttributeName : UIFont(name: "Helvetica", size: 12)!,
-            NSStrokeWidthAttributeName : 0,
-            NSForegroundColorAttributeName : UIColor.blackColor()
-        ]
-        text.drawAtPoint(CGPointMake(view.frame.origin.x+10, view.frame.size.height-25), withAttributes: attributes);
-        let img:UIImage = UIGraphicsGetImageFromCurrentImageContext();
-        
-        UIGraphicsEndImageContext();
-        return img;
     }
     
 

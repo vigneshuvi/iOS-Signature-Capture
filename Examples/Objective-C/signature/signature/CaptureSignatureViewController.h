@@ -23,7 +23,8 @@
 }
 
 @property (nonatomic,strong) id delegate;
--(void)startSampleProcess; // Instance method
+-(void)startSampleProcess:(NSString*)text;
+// Instance method
 
 @property (strong, nonatomic) IBOutlet UviSignatureView *signatureView;
 - (IBAction)captureSign:(id)sender;

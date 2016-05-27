@@ -61,8 +61,16 @@ static CGPoint midpoint(CGPoint p0, CGPoint p1) {
     [pathArray addObject:signPath];
 }
 
-- (UIImage *)signatureImage {
+- (UIImage *)signatureImage:(CGPoint)position text:(NSString*)text {
     UIGraphicsBeginImageContext(self.bounds.size);
+    
+    if (text  && ![text isEqualToString:@""]) {
+        // Setup the font specific variables
+        NSDictionary *attributes = @{NSFontAttributeName           : [UIFont fontWithName:@"Helvetica" size:12],
+                                     NSStrokeWidthAttributeName    : @(0),
+                                     NSStrokeColorAttributeName    : [UIColor blackColor]};
+        [text drawAtPoint:position withAttributes:attributes];
+    }
     
     for (UIBezierPath *path in self.pathArray) {
         [self.lineColor setStroke];
@@ -131,8 +139,6 @@ static CGPoint midpoint(CGPoint p0, CGPoint p1) {
     }
     return backgroundLines;
 }
-
-
 
 
 // Erase the Siganture view by initial the new path.

@@ -78,7 +78,7 @@
                                     {
                                         [alertView dismissViewControllerAnimated:YES completion:nil];
                                         [self.signatureView captureSignature];
-                                        [self startSampleProcess];
+                                        [self startSampleProcess:[NSString stringWithFormat:@"By: %@, %@",userName,signedDate]];
                                         [self.navigationController popToRootViewControllerAnimated:YES];
                                     }
                                    
@@ -99,25 +99,8 @@
 
 }
 
-- (UIImage *) imageWithView:(UIView *)view text:(NSString*)text
-{
-    UIGraphicsBeginImageContextWithOptions(view.bounds.size, view.opaque, 0.0);
-    [view.layer renderInContext:UIGraphicsGetCurrentContext()];
-    
-    // Setup the font specific variables
-    NSDictionary *attributes = @{NSFontAttributeName           : [UIFont fontWithName:@"Helvetica" size:12],
-                                 NSStrokeWidthAttributeName    : @(0),
-                                 NSStrokeColorAttributeName    : [UIColor blackColor]};
-    [text drawAtPoint:CGPointMake(view.frame.origin.x+10 , view.frame.size.height-25) withAttributes:attributes];
-    
-    UIImage * img = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    
-    return img;
-}
-
--(void)startSampleProcess {
-    UIImage *captureImage = [self.signatureView signatureImage];
+-(void)startSampleProcess:(NSString*)text {
+    UIImage *captureImage = [self.signatureView signatureImage:CGPointMake(self.signatureView.frame.origin.x+10 , self.signatureView.frame.size.height-25) text:text];
     [self.delegate processCompleted:captureImage];
 }
 
