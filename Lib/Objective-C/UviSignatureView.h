@@ -17,10 +17,10 @@
 @interface UviSignatureView : UIView {
     CGPoint previousPoint;
     UIBezierPath *signPath;
-    NSMutableArray *pathArray;
     NSArray *backgroundLines;
 }
 
+@property (nonatomic, strong, nonnull) NSMutableArray *pathArray;
 @property (nonatomic, strong, nullable) UIColor *lineColor;
 @property (nonatomic) CGFloat lineWidth;
 @property (nonatomic, readonly) BOOL signatureExists;

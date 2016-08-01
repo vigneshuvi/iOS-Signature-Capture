@@ -9,7 +9,7 @@
 #import "UviSignatureView.h"
 #import <QuartzCore/QuartzCore.h>
 
-
+#define USER_SIGNATURE_PATH  @"user_signature_path"
 
 static CGPoint midpoint(CGPoint p0, CGPoint p1) {
     return (CGPoint) {
@@ -58,7 +58,11 @@ static CGPoint midpoint(CGPoint p0, CGPoint p1) {
 }
 
 - (void)captureSignature {
-    [pathArray addObject:signPath];
+    [_pathArray addObject:signPath];
+    NSData *saveData = [NSKeyedArchiver archivedDataWithRootObject:_pathArray];
+    
+    [[NSUserDefaults standardUserDefaults] setObject:saveData forKey:USER_SIGNATURE_PATH];
+    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 - (UIImage *)signatureImage:(CGPoint)position text:(NSString*)text {
@@ -98,10 +102,10 @@ static CGPoint midpoint(CGPoint p0, CGPoint p1) {
 }
 
 - (NSMutableArray *)pathArray {
-    if (pathArray == nil) {
-        pathArray = [NSMutableArray new];
+    if (_pathArray == nil) {
+        _pathArray = [NSMutableArray new];
     }
-    return pathArray;
+    return _pathArray;
 }
 
 - (CGPoint)placeholderPoint {
@@ -143,6 +147,9 @@ static CGPoint midpoint(CGPoint p0, CGPoint p1) {
 
 // Erase the Siganture view by initial the new path.
 - (void)erase {
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:USER_SIGNATURE_PATH];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    [_pathArray removeAllObjects];
    signPath = [UIBezierPath bezierPath];
    [signPath setLineWidth:2.0];
     [signPath setLineCapStyle:kCGLineCapRound];

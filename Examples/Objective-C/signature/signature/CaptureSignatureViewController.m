@@ -9,6 +9,8 @@
 #import "CaptureSignatureViewController.h"
 #import <QuartzCore/QuartzCore.h>
 
+#define USER_SIGNATURE_PATH  @"user_signature_path"
+
 
 @interface CaptureSignatureViewController ()
 
@@ -33,6 +35,11 @@
 -(void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     [self becomeFirstResponder];
+    
+    NSData *data = [[NSUserDefaults standardUserDefaults] objectForKey:USER_SIGNATURE_PATH];
+    NSMutableArray *signPathArray = [NSKeyedUnarchiver unarchiveObjectWithData:data];
+    [self.signatureView setPathArray:signPathArray];
+    [self.signatureView setNeedsDisplay];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
