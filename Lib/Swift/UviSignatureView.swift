@@ -14,7 +14,7 @@ import QuartzCore
 class UviSignatureView: UIView {
     var signPath: UIBezierPath = UIBezierPath()
     var previousPoint: CGPoint  = CGPoint.init(x: 0, y: 0)
-    var pathArray: NSMutableArray = NSMutableArray();
+    var pathArray: NSMutableArray!
     var lineColor: UIColor = UIColor.blackColor();
     var lineWidth : CGFloat = 0.0;
     let placeHolderString: NSString = "Sign here";
@@ -51,24 +51,23 @@ class UviSignatureView: UIView {
         signPath.lineWidth = 2.0;            // Configurate the line Width
         self.userInteractionEnabled = true;
         previousPoint = CGPoint.init(x: 0, y: 0);
-        pathArray = NSMutableArray();
+        //pathArray = NSMutableArray();
     
         // Added the Pan Reconginzer for capture the touches
-        let panRecognizer = UIPanGestureRecognizer(target:self, action:"panRecognizer:")
+        let panRecognizer = UIPanGestureRecognizer(target:self, action:#selector(UviSignatureView.panRecognizer(_:)))
         panRecognizer.minimumNumberOfTouches = 1
         self.addGestureRecognizer(panRecognizer);
-        
-
+    
         
         // Erase when long press the view.
-        let eraseRecognizer = UILongPressGestureRecognizer(target:self, action:"eraseRecognizer:")
+        let eraseRecognizer = UILongPressGestureRecognizer(target:self, action:#selector(UviSignatureView.eraseRecognizer(_:)))
          self.addGestureRecognizer(eraseRecognizer);
         
         
         // Erase the view when recieving a notification named "shake" from the NSNotificationCenter object
         NSNotificationCenter.defaultCenter().addObserver(
             self,
-            selector: "erase",
+            selector: #selector(UviSignatureView.erase),
             name: "shake",
             object: nil);
     }
@@ -106,6 +105,19 @@ class UviSignatureView: UIView {
     
         bgLinges = [path];
         return bgLinges;
+    }
+    
+    // Set background Lines
+    func pathArray(array:NSMutableArray)-> NSMutableArray {
+        if self.pathArray == nil {
+            pathArray = NSMutableArray();
+        }
+        
+        if array.count > 0 {
+            pathArray = array;
+        }
+        
+        return pathArray;
     }
 
     // panReconizer method triggers while touch the view.
@@ -147,9 +159,12 @@ class UviSignatureView: UIView {
     // Erase the Siganture view by initial the new path.
     func erase() {
          //signPath.closePath()
-         signPath = UIBezierPath();
-         previousPoint = CGPoint.init(x: 0, y: 0)
-         self.setNeedsDisplay(); // Update the view.
+        NSUserDefaults.standardUserDefaults().removeObjectForKey(USER_SIGNATURE_PATH);
+        NSUserDefaults.standardUserDefaults().synchronize();
+        pathArray.removeAllObjects();
+        signPath = UIBezierPath();
+        previousPoint = CGPoint.init(x: 0, y: 0)
+        self.setNeedsDisplay(); // Update the view.
     }
     
     func signatureExists()->Bool {
@@ -158,6 +173,9 @@ class UviSignatureView: UIView {
     
     func captureSignature() {
         pathArray.addObject(signPath);
+        let saveData:NSData = NSKeyedArchiver.archivedDataWithRootObject(pathArray);
+        NSUserDefaults.standardUserDefaults().setObject(saveData, forKey: USER_SIGNATURE_PATH)
+        NSUserDefaults.standardUserDefaults().synchronize();
     }
     
     func signatureImage(text : NSString, position : CGPoint)-> UIImage {
@@ -174,7 +192,7 @@ class UviSignatureView: UIView {
         }
 
         
-        for path in self.pathArray {
+        for path in (self.pathArray) {
             self.lineColor.setStroke();
             path.stroke();
         }
@@ -214,7 +232,7 @@ class UviSignatureView: UIView {
             
         }
         
-        for path in self.backgroundLines() {
+        for path in self.pathArray {
             self.lineColor.setStroke()
             path.stroke();
         }

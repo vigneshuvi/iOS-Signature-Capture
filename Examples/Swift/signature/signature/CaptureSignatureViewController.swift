@@ -9,6 +9,8 @@
 import UIKit
 import QuartzCore
 
+let USER_SIGNATURE_PATH = "user_signature_path"
+
 protocol CaptureSignatureViewDelegate {
     func processCompleted(signImage: UIImage)
 }
@@ -77,6 +79,15 @@ class CaptureSignatureViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        if let  data:NSData = NSUserDefaults.standardUserDefaults().objectForKey(USER_SIGNATURE_PATH) as? NSData {
+            let signPathArray:NSMutableArray = NSKeyedUnarchiver.unarchiveObjectWithData(data) as! NSMutableArray;
+            //self.signatureView.pathArray = signPathArray;
+            self.signatureView.pathArray(signPathArray);
+        }
+
+
+
+        self.signatureView.setNeedsDisplay();
     }
 
     override func didReceiveMemoryWarning() {
