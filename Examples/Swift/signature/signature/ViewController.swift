@@ -20,12 +20,12 @@ class ViewController: UIViewController, CaptureSignatureViewDelegate {
         // Do any additional setup after loading the view, typically from a nib.
         let borderWidth:CGFloat = 2.0
         
-        self.signatureImageView.layer.borderColor = UIColor.grayColor().CGColor;
+        self.signatureImageView.layer.borderColor = UIColor.gray.cgColor;
         self.signatureImageView.layer.borderWidth = borderWidth;
     }
     
     // implementation of the protocol
-    func processCompleted(signImage: UIImage) {
+    func processCompleted(_ signImage: UIImage) {
         signatureImageView.image = signImage;
     }
 
@@ -34,9 +34,9 @@ class ViewController: UIViewController, CaptureSignatureViewDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "view_to_capture" {
-            secondController = segue.destinationViewController as? CaptureSignatureViewController
+            secondController = segue.destination as? CaptureSignatureViewController
             secondController!.delegate = self;
         }
     }

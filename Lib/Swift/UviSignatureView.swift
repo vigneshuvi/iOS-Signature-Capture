@@ -15,7 +15,7 @@ class UviSignatureView: UIView {
     var signPath: UIBezierPath = UIBezierPath()
     var previousPoint: CGPoint  = CGPoint.init(x: 0, y: 0)
     var pathArray: NSMutableArray!
-    var lineColor: UIColor = UIColor.blackColor();
+    var lineColor: UIColor = UIColor.black;
     var lineWidth : CGFloat = 0.0;
     let placeHolderString: NSString = "Sign here";
     
@@ -29,7 +29,7 @@ class UviSignatureView: UIView {
             super.init(coder: coder)!
         }
         else {
-            super.init(frame: CGRectZero)
+            super.init(frame: CGRect.zero)
         }
         self.initialize()
     }
@@ -40,7 +40,7 @@ class UviSignatureView: UIView {
         self.initialize()
     }
     
-    func midpoint(p0: CGPoint, p1: CGPoint) -> CGPoint {
+    func midpoint(_ p0: CGPoint, p1: CGPoint) -> CGPoint {
         let mid :CGPoint = CGPoint.init(x: ((p0.x + p1.x) / 2.0), y: ((p0.y + p1.y) / 2.0))
         return mid;
     }
@@ -49,9 +49,9 @@ class UviSignatureView: UIView {
    func initialize() {
         signPath = UIBezierPath();
         signPath.lineWidth = 2.0;            // Configurate the line Width
-        self.userInteractionEnabled = true;
+        self.isUserInteractionEnabled = true;
         previousPoint = CGPoint.init(x: 0, y: 0);
-        //pathArray = NSMutableArray();
+        pathArray = NSMutableArray();
     
         // Added the Pan Reconginzer for capture the touches
         let panRecognizer = UIPanGestureRecognizer(target:self, action:#selector(UviSignatureView.panRecognizer(_:)))
@@ -65,10 +65,10 @@ class UviSignatureView: UIView {
         
         
         // Erase the view when recieving a notification named "shake" from the NSNotificationCenter object
-        NSNotificationCenter.defaultCenter().addObserver(
+        NotificationCenter.default.addObserver(
             self,
             selector: #selector(UviSignatureView.erase),
-            name: "shake",
+            name: NSNotification.Name(rawValue: "shake"),
             object: nil);
     }
     
@@ -81,7 +81,7 @@ class UviSignatureView: UIView {
         
         let y1:CGFloat = height*bottom;
         let font:UIFont = UIFont(name: "Helvetica", size: 12)!;
-        return CGPointMake(x1, y1 - 5 - font.pointSize + font.descender);
+        return CGPoint(x: x1, y: y1 - 5 - font.pointSize + font.descender);
     }
     
     // Set background Lines
@@ -100,15 +100,15 @@ class UviSignatureView: UIView {
         let y1:CGFloat = height*bottom;
         let y2:CGFloat = height*bottom;
             
-        path.moveToPoint(CGPointMake(x1, y1));
-        path.addLineToPoint(CGPointMake(x2, y2));
+        path.move(to: CGPoint(x: x1, y: y1));
+        path.addLine(to: CGPoint(x: x2, y: y2));
     
         bgLinges = [path];
         return bgLinges;
     }
     
     // Set background Lines
-    func pathArray(array:NSMutableArray)-> NSMutableArray {
+    func pathArray(_ array:NSMutableArray)-> NSMutableArray {
         if self.pathArray == nil {
             pathArray = NSMutableArray();
         }
@@ -121,25 +121,25 @@ class UviSignatureView: UIView {
     }
 
     // panReconizer method triggers while touch the view.
-    func panRecognizer(recognizer:UIPanGestureRecognizer) {
-        let currentPoint = recognizer.locationInView(self);
+    func panRecognizer(_ recognizer:UIPanGestureRecognizer) {
+        let currentPoint = recognizer.location(in: self);
         let midPoint:CGPoint = midpoint(previousPoint, p1: currentPoint)
         
         switch(recognizer.state) {
-            case UIGestureRecognizerState.Began:
-                signPath.moveToPoint(currentPoint)
+            case UIGestureRecognizerState.began:
+                signPath.move(to: currentPoint)
                 break;
             
-            case UIGestureRecognizerState.Changed:
-                 signPath.addQuadCurveToPoint(midPoint, controlPoint: previousPoint);
+            case UIGestureRecognizerState.changed:
+                 signPath.addQuadCurve(to: midPoint, controlPoint: previousPoint);
                 break;
             
-            case UIGestureRecognizerState.Recognized:
-                 signPath.addQuadCurveToPoint(midPoint, controlPoint: previousPoint);
+            case UIGestureRecognizerState.ended:
+                 signPath.addQuadCurve(to: midPoint, controlPoint: previousPoint);
                 break;
             
-            case UIGestureRecognizerState.Possible:
-                signPath.addQuadCurveToPoint(midPoint, controlPoint: previousPoint);
+            case UIGestureRecognizerState.possible:
+                signPath.addQuadCurve(to: midPoint, controlPoint: previousPoint);
                 break;
             
             default:
@@ -152,15 +152,15 @@ class UviSignatureView: UIView {
     }
     
     // eraseRecognizer method triggers while long press the view.
-    func eraseRecognizer(recognizer:UILongPressGestureRecognizer) {
+    func eraseRecognizer(_ recognizer:UILongPressGestureRecognizer) {
         self.erase()
     }
     
     // Erase the Siganture view by initial the new path.
     func erase() {
          //signPath.closePath()
-        NSUserDefaults.standardUserDefaults().removeObjectForKey(USER_SIGNATURE_PATH);
-        NSUserDefaults.standardUserDefaults().synchronize();
+        UserDefaults.standard.removeObject(forKey: USER_SIGNATURE_PATH);
+        UserDefaults.standard.synchronize();
         pathArray.removeAllObjects();
         signPath = UIBezierPath();
         previousPoint = CGPoint.init(x: 0, y: 0)
@@ -172,34 +172,34 @@ class UviSignatureView: UIView {
     }
     
     func captureSignature() {
-        pathArray.addObject(signPath);
-        let saveData:NSData = NSKeyedArchiver.archivedDataWithRootObject(pathArray);
-        NSUserDefaults.standardUserDefaults().setObject(saveData, forKey: USER_SIGNATURE_PATH)
-        NSUserDefaults.standardUserDefaults().synchronize();
+        pathArray.add(signPath);
+        let saveData:Data = NSKeyedArchiver.archivedData(withRootObject: pathArray);
+        UserDefaults.standard.set(saveData, forKey: USER_SIGNATURE_PATH)
+        UserDefaults.standard.synchronize();
     }
     
-    func signatureImage(text : NSString, position : CGPoint)-> UIImage {
+    func signatureImage(_ text : NSString, position : CGPoint)-> UIImage {
         UIGraphicsBeginImageContext(self.bounds.size);
     
-        if(!text.isEqualToString("")) {
+        if(!text.isEqual(to: "")) {
             // Setup the font specific variables
             let attributes :[String:AnyObject] = [
                 NSFontAttributeName : UIFont(name: "Helvetica", size: 12)!,
-                NSStrokeWidthAttributeName : 0,
-                NSForegroundColorAttributeName : UIColor.blackColor()
+                NSStrokeWidthAttributeName : 0 as AnyObject,
+                NSForegroundColorAttributeName : UIColor.black
             ]
-            text.drawAtPoint(position, withAttributes: attributes);
+            text.draw(at: position, withAttributes: attributes);
         }
 
         
         for path in (self.pathArray) {
             self.lineColor.setStroke();
-            path.stroke();
+            (path as AnyObject).stroke();
         }
 
 
         
-        let image:UIImage = UIGraphicsGetImageFromCurrentImageContext();
+        let image:UIImage = UIGraphicsGetImageFromCurrentImageContext()!;
         UIGraphicsEndImageContext();
         return image;
     }
@@ -207,34 +207,34 @@ class UviSignatureView: UIView {
 
     // Only override drawRect: if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
-    override func drawRect(rect: CGRect) {
+    override func draw(_ rect: CGRect) {
         // Drawing code
-        UIColor.blackColor().setStroke()
+        UIColor.black.setStroke()
         signPath.stroke()
         
-        UIColor.whiteColor().setFill();
-        CGContextFillRect(UIGraphicsGetCurrentContext(), rect);
+        UIColor.white.setFill();
+        UIGraphicsGetCurrentContext()?.fill(rect);
         
         for path in self.backgroundLines() {
-            UIColor.blackColor().colorWithAlphaComponent(0.2).setStroke();
-            path.stroke();
+            UIColor.black.withAlphaComponent(0.2).setStroke();
+            (path as AnyObject).stroke();
         }
         
-        if (!self.signatureExists() && self.signPath.empty) {
+        if (!self.signatureExists() && self.signPath.isEmpty) {
             
                 // Setup the font specific variables
                 let attributes :[String:AnyObject] = [
                     NSFontAttributeName : UIFont(name: "Helvetica", size: 12)!,
-                    NSStrokeWidthAttributeName : 0,
-                    NSForegroundColorAttributeName : UIColor.blackColor().colorWithAlphaComponent(0.2)
+                    NSStrokeWidthAttributeName : 0 as AnyObject,
+                    NSForegroundColorAttributeName : UIColor.black.withAlphaComponent(0.2)
                 ]
-                placeHolderString.drawAtPoint(self.placeholderPoint(), withAttributes: attributes);
+                placeHolderString.draw(at: self.placeholderPoint(), withAttributes: attributes);
             
         }
         
         for path in self.pathArray {
             self.lineColor.setStroke()
-            path.stroke();
+            (path as AnyObject).stroke();
         }
         
         
