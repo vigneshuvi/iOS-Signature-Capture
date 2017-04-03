@@ -17,14 +17,14 @@ Pod::Spec.new do |s|
 
   s.name         = "iOSSignatureCapture"
   s.version      = "1.0.0"
-  s.summary      = "iOS-Signature-Capture is helps to capture the user signature with name and signed date in iOS and supports both Objective-c and Swift languages."
+  s.summary      = "iOS-Signature-Capture is helps to capture the user signature with name and signed date in iOS."
 
   # This description is used to generate tags and improve search results.
   #   * Think: What does it do? Why did you write it? What is the focus?
   #   * Try to keep it short, snappy and to the point.
   #   * Write the description between the DESC delimiters below.
   #   * Finally, don't worry about the indent, CocoaPods strips it!
-  s.description  = "iOS-Signature-Capture is helps to capture the user signature with name and signed date in iOS"
+  s.description  = "iOS-Signature-Capture is helps to capture the user signature with name and signed date in iOS and supports both Objective-c and Swift languages."
 
   s.homepage     = "https://github.com/vigneshuvi/iOS-Signature-Capture"
   # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
