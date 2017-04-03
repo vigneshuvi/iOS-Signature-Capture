@@ -10,9 +10,9 @@ import UIKit
 import QuartzCore
         
 
-let USER_SIGNATURE_PATH = "user_signature_path"
+public let USER_SIGNATURE_PATH = "user_signature_path"
         
-class UviSignatureView: UIView {
+public class UviSignatureView: UIView {
     var signPath: UIBezierPath = UIBezierPath()
     var previousPoint: CGPoint  = CGPoint.init(x: 0, y: 0)
     var pathArray: NSMutableArray!
@@ -20,10 +20,15 @@ class UviSignatureView: UIView {
     var lineWidth : CGFloat = 0.0;
     let placeHolderString: NSString = "Sign here";
     
-    required convenience init(coder aDecoder: NSCoder) {
+    public required convenience init(coder aDecoder: NSCoder) {
         self.init(aDecoder)
         self.initialize()
     }
+    
+    public override func layoutSubviews() {
+        super.layoutSubviews()
+    }
+    
     
     init(_ coder: NSCoder? = nil) {
         if let coder = coder {
@@ -36,7 +41,7 @@ class UviSignatureView: UIView {
     }
     
     // Initial the Siganture view based on the frame.
-    override init(frame:CGRect) {
+    public override init(frame:CGRect) {
         super.init(frame:frame)
         self.initialize()
     }
@@ -208,7 +213,7 @@ class UviSignatureView: UIView {
 
     // Only override drawRect: if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
+    override public func draw(_ rect: CGRect) {
         // Drawing code
         UIColor.black.setStroke()
         signPath.stroke()

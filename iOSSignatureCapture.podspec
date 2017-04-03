@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "iOSSignatureCapture"
-  s.version      = "1.0.0"
+  s.version      = "1.0.1"
   s.summary      = "iOS-Signature-Capture is helps to capture the user signature with name and signed date in iOS."
 
   # This description is used to generate tags and improve search results.
