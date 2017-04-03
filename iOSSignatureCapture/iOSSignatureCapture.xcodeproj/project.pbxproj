@@ -7,118 +7,110 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0B43C0EA1E9227FB007F8E47 /* iOSSignatureCapture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B43C0E01E9227FB007F8E47 /* iOSSignatureCapture.framework */; };
-		0B43C0EF1E9227FB007F8E47 /* iOSSignatureCaptureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B43C0EE1E9227FB007F8E47 /* iOSSignatureCaptureTests.swift */; };
-		0B43C0F11E9227FB007F8E47 /* iOSSignatureCapture.h in Headers */ = {isa = PBXBuildFile; fileRef = 0B43C0E31E9227FB007F8E47 /* iOSSignatureCapture.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0B43C1061E923632007F8E47 /* UviSignatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B43C1051E923632007F8E47 /* UviSignatureView.swift */; };
+		0BABD9DC1E924C0800046FC0 /* iOSSignatureCapture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BABD9D21E924C0800046FC0 /* iOSSignatureCapture.framework */; };
+		0BABD9E11E924C0800046FC0 /* iOSSignatureCaptureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BABD9E01E924C0800046FC0 /* iOSSignatureCaptureTests.swift */; };
+		0BABD9E31E924C0800046FC0 /* iOSSignatureCapture.h in Headers */ = {isa = PBXBuildFile; fileRef = 0BABD9D51E924C0800046FC0 /* iOSSignatureCapture.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0BABD9ED1E924C4600046FC0 /* UviSignatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BABD9EC1E924C4600046FC0 /* UviSignatureView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		0B43C0EB1E9227FB007F8E47 /* PBXContainerItemProxy */ = {
+		0BABD9DD1E924C0800046FC0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 0B43C0D71E9227FB007F8E47 /* Project object */;
+			containerPortal = 0BABD9C91E924C0800046FC0 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 0B43C0DF1E9227FB007F8E47;
+			remoteGlobalIDString = 0BABD9D11E924C0800046FC0;
 			remoteInfo = iOSSignatureCapture;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0B43C0E01E9227FB007F8E47 /* iOSSignatureCapture.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = iOSSignatureCapture.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		0B43C0E31E9227FB007F8E47 /* iOSSignatureCapture.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iOSSignatureCapture.h; sourceTree = "<group>"; };
-		0B43C0E41E9227FB007F8E47 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0B43C0E91E9227FB007F8E47 /* iOSSignatureCaptureTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSSignatureCaptureTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		0B43C0EE1E9227FB007F8E47 /* iOSSignatureCaptureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSSignatureCaptureTests.swift; sourceTree = "<group>"; };
-		0B43C0F01E9227FB007F8E47 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0B43C1051E923632007F8E47 /* UviSignatureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UviSignatureView.swift; sourceTree = "<group>"; };
+		0BABD9D21E924C0800046FC0 /* iOSSignatureCapture.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = iOSSignatureCapture.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0BABD9D51E924C0800046FC0 /* iOSSignatureCapture.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iOSSignatureCapture.h; sourceTree = "<group>"; };
+		0BABD9D61E924C0800046FC0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0BABD9DB1E924C0800046FC0 /* iOSSignatureCaptureTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSSignatureCaptureTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0BABD9E01E924C0800046FC0 /* iOSSignatureCaptureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSSignatureCaptureTests.swift; sourceTree = "<group>"; };
+		0BABD9E21E924C0800046FC0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0BABD9EC1E924C4600046FC0 /* UviSignatureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UviSignatureView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		0B43C0DC1E9227FB007F8E47 /* Frameworks */ = {
+		0BABD9CE1E924C0800046FC0 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		0B43C0E61E9227FB007F8E47 /* Frameworks */ = {
+		0BABD9D81E924C0800046FC0 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0B43C0EA1E9227FB007F8E47 /* iOSSignatureCapture.framework in Frameworks */,
+				0BABD9DC1E924C0800046FC0 /* iOSSignatureCapture.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0B43C0D61E9227FB007F8E47 = {
+		0BABD9C81E924C0800046FC0 = {
 			isa = PBXGroup;
 			children = (
-				0B43C0E21E9227FB007F8E47 /* iOSSignatureCapture */,
-				0B43C0ED1E9227FB007F8E47 /* iOSSignatureCaptureTests */,
-				0B43C0E11E9227FB007F8E47 /* Products */,
+				0BABD9D41E924C0800046FC0 /* iOSSignatureCapture */,
+				0BABD9DF1E924C0800046FC0 /* iOSSignatureCaptureTests */,
+				0BABD9D31E924C0800046FC0 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		0B43C0E11E9227FB007F8E47 /* Products */ = {
+		0BABD9D31E924C0800046FC0 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0B43C0E01E9227FB007F8E47 /* iOSSignatureCapture.framework */,
-				0B43C0E91E9227FB007F8E47 /* iOSSignatureCaptureTests.xctest */,
+				0BABD9D21E924C0800046FC0 /* iOSSignatureCapture.framework */,
+				0BABD9DB1E924C0800046FC0 /* iOSSignatureCaptureTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		0B43C0E21E9227FB007F8E47 /* iOSSignatureCapture */ = {
+		0BABD9D41E924C0800046FC0 /* iOSSignatureCapture */ = {
 			isa = PBXGroup;
 			children = (
-				0B43C0FA1E922830007F8E47 /* Source */,
-				0B43C0E31E9227FB007F8E47 /* iOSSignatureCapture.h */,
-				0B43C0E41E9227FB007F8E47 /* Info.plist */,
+				0BABD9EC1E924C4600046FC0 /* UviSignatureView.swift */,
+				0BABD9D51E924C0800046FC0 /* iOSSignatureCapture.h */,
+				0BABD9D61E924C0800046FC0 /* Info.plist */,
 			);
 			path = iOSSignatureCapture;
 			sourceTree = "<group>";
 		};
-		0B43C0ED1E9227FB007F8E47 /* iOSSignatureCaptureTests */ = {
+		0BABD9DF1E924C0800046FC0 /* iOSSignatureCaptureTests */ = {
 			isa = PBXGroup;
 			children = (
-				0B43C0EE1E9227FB007F8E47 /* iOSSignatureCaptureTests.swift */,
-				0B43C0F01E9227FB007F8E47 /* Info.plist */,
+				0BABD9E01E924C0800046FC0 /* iOSSignatureCaptureTests.swift */,
+				0BABD9E21E924C0800046FC0 /* Info.plist */,
 			);
 			path = iOSSignatureCaptureTests;
-			sourceTree = "<group>";
-		};
-		0B43C0FA1E922830007F8E47 /* Source */ = {
-			isa = PBXGroup;
-			children = (
-				0B43C1051E923632007F8E47 /* UviSignatureView.swift */,
-			);
-			name = Source;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		0B43C0DD1E9227FB007F8E47 /* Headers */ = {
+		0BABD9CF1E924C0800046FC0 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0B43C0F11E9227FB007F8E47 /* iOSSignatureCapture.h in Headers */,
+				0BABD9E31E924C0800046FC0 /* iOSSignatureCapture.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		0B43C0DF1E9227FB007F8E47 /* iOSSignatureCapture */ = {
+		0BABD9D11E924C0800046FC0 /* iOSSignatureCapture */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0B43C0F41E9227FB007F8E47 /* Build configuration list for PBXNativeTarget "iOSSignatureCapture" */;
+			buildConfigurationList = 0BABD9E61E924C0800046FC0 /* Build configuration list for PBXNativeTarget "iOSSignatureCapture" */;
 			buildPhases = (
-				0B43C0DB1E9227FB007F8E47 /* Sources */,
-				0B43C0DC1E9227FB007F8E47 /* Frameworks */,
-				0B43C0DD1E9227FB007F8E47 /* Headers */,
-				0B43C0DE1E9227FB007F8E47 /* Resources */,
+				0BABD9CD1E924C0800046FC0 /* Sources */,
+				0BABD9CE1E924C0800046FC0 /* Frameworks */,
+				0BABD9CF1E924C0800046FC0 /* Headers */,
+				0BABD9D01E924C0800046FC0 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -126,77 +118,77 @@
 			);
 			name = iOSSignatureCapture;
 			productName = iOSSignatureCapture;
-			productReference = 0B43C0E01E9227FB007F8E47 /* iOSSignatureCapture.framework */;
+			productReference = 0BABD9D21E924C0800046FC0 /* iOSSignatureCapture.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		0B43C0E81E9227FB007F8E47 /* iOSSignatureCaptureTests */ = {
+		0BABD9DA1E924C0800046FC0 /* iOSSignatureCaptureTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0B43C0F71E9227FB007F8E47 /* Build configuration list for PBXNativeTarget "iOSSignatureCaptureTests" */;
+			buildConfigurationList = 0BABD9E91E924C0800046FC0 /* Build configuration list for PBXNativeTarget "iOSSignatureCaptureTests" */;
 			buildPhases = (
-				0B43C0E51E9227FB007F8E47 /* Sources */,
-				0B43C0E61E9227FB007F8E47 /* Frameworks */,
-				0B43C0E71E9227FB007F8E47 /* Resources */,
+				0BABD9D71E924C0800046FC0 /* Sources */,
+				0BABD9D81E924C0800046FC0 /* Frameworks */,
+				0BABD9D91E924C0800046FC0 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				0B43C0EC1E9227FB007F8E47 /* PBXTargetDependency */,
+				0BABD9DE1E924C0800046FC0 /* PBXTargetDependency */,
 			);
 			name = iOSSignatureCaptureTests;
 			productName = iOSSignatureCaptureTests;
-			productReference = 0B43C0E91E9227FB007F8E47 /* iOSSignatureCaptureTests.xctest */;
+			productReference = 0BABD9DB1E924C0800046FC0 /* iOSSignatureCaptureTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		0B43C0D71E9227FB007F8E47 /* Project object */ = {
+		0BABD9C91E924C0800046FC0 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0810;
 				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = vigneshuvi;
 				TargetAttributes = {
-					0B43C0DF1E9227FB007F8E47 = {
+					0BABD9D11E924C0800046FC0 = {
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = 7FUQA46NH7;
 						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 					};
-					0B43C0E81E9227FB007F8E47 = {
+					0BABD9DA1E924C0800046FC0 = {
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = 7FUQA46NH7;
 						ProvisioningStyle = Automatic;
 					};
 				};
 			};
-			buildConfigurationList = 0B43C0DA1E9227FB007F8E47 /* Build configuration list for PBXProject "iOSSignatureCapture" */;
+			buildConfigurationList = 0BABD9CC1E924C0800046FC0 /* Build configuration list for PBXProject "iOSSignatureCapture" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = 0B43C0D61E9227FB007F8E47;
-			productRefGroup = 0B43C0E11E9227FB007F8E47 /* Products */;
+			mainGroup = 0BABD9C81E924C0800046FC0;
+			productRefGroup = 0BABD9D31E924C0800046FC0 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				0B43C0DF1E9227FB007F8E47 /* iOSSignatureCapture */,
-				0B43C0E81E9227FB007F8E47 /* iOSSignatureCaptureTests */,
+				0BABD9D11E924C0800046FC0 /* iOSSignatureCapture */,
+				0BABD9DA1E924C0800046FC0 /* iOSSignatureCaptureTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		0B43C0DE1E9227FB007F8E47 /* Resources */ = {
+		0BABD9D01E924C0800046FC0 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		0B43C0E71E9227FB007F8E47 /* Resources */ = {
+		0BABD9D91E924C0800046FC0 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -206,34 +198,34 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		0B43C0DB1E9227FB007F8E47 /* Sources */ = {
+		0BABD9CD1E924C0800046FC0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0B43C1061E923632007F8E47 /* UviSignatureView.swift in Sources */,
+				0BABD9ED1E924C4600046FC0 /* UviSignatureView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		0B43C0E51E9227FB007F8E47 /* Sources */ = {
+		0BABD9D71E924C0800046FC0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0B43C0EF1E9227FB007F8E47 /* iOSSignatureCaptureTests.swift in Sources */,
+				0BABD9E11E924C0800046FC0 /* iOSSignatureCaptureTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		0B43C0EC1E9227FB007F8E47 /* PBXTargetDependency */ = {
+		0BABD9DE1E924C0800046FC0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 0B43C0DF1E9227FB007F8E47 /* iOSSignatureCapture */;
-			targetProxy = 0B43C0EB1E9227FB007F8E47 /* PBXContainerItemProxy */;
+			target = 0BABD9D11E924C0800046FC0 /* iOSSignatureCapture */;
+			targetProxy = 0BABD9DD1E924C0800046FC0 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		0B43C0F21E9227FB007F8E47 /* Debug */ = {
+		0BABD9E41E924C0800046FC0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -286,7 +278,7 @@
 			};
 			name = Debug;
 		};
-		0B43C0F31E9227FB007F8E47 /* Release */ = {
+		0BABD9E51E924C0800046FC0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -332,7 +324,7 @@
 			};
 			name = Release;
 		};
-		0B43C0F51E9227FB007F8E47 /* Debug */ = {
+		0BABD9E71E924C0800046FC0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
@@ -344,6 +336,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = iOSSignatureCapture/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = vigneshuvi.iOSSignatureCapture;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -353,7 +346,7 @@
 			};
 			name = Debug;
 		};
-		0B43C0F61E9227FB007F8E47 /* Release */ = {
+		0BABD9E81E924C0800046FC0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
@@ -365,6 +358,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = iOSSignatureCapture/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = vigneshuvi.iOSSignatureCapture;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -373,7 +367,7 @@
 			};
 			name = Release;
 		};
-		0B43C0F81E9227FB007F8E47 /* Debug */ = {
+		0BABD9EA1E924C0800046FC0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -386,7 +380,7 @@
 			};
 			name = Debug;
 		};
-		0B43C0F91E9227FB007F8E47 /* Release */ = {
+		0BABD9EB1E924C0800046FC0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -402,34 +396,32 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0B43C0DA1E9227FB007F8E47 /* Build configuration list for PBXProject "iOSSignatureCapture" */ = {
+		0BABD9CC1E924C0800046FC0 /* Build configuration list for PBXProject "iOSSignatureCapture" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				0B43C0F21E9227FB007F8E47 /* Debug */,
-				0B43C0F31E9227FB007F8E47 /* Release */,
+				0BABD9E41E924C0800046FC0 /* Debug */,
+				0BABD9E51E924C0800046FC0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0B43C0F41E9227FB007F8E47 /* Build configuration list for PBXNativeTarget "iOSSignatureCapture" */ = {
+		0BABD9E61E924C0800046FC0 /* Build configuration list for PBXNativeTarget "iOSSignatureCapture" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				0B43C0F51E9227FB007F8E47 /* Debug */,
-				0B43C0F61E9227FB007F8E47 /* Release */,
+				0BABD9E71E924C0800046FC0 /* Debug */,
+				0BABD9E81E924C0800046FC0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
 		};
-		0B43C0F71E9227FB007F8E47 /* Build configuration list for PBXNativeTarget "iOSSignatureCaptureTests" */ = {
+		0BABD9E91E924C0800046FC0 /* Build configuration list for PBXNativeTarget "iOSSignatureCaptureTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				0B43C0F81E9227FB007F8E47 /* Debug */,
-				0B43C0F91E9227FB007F8E47 /* Release */,
+				0BABD9EA1E924C0800046FC0 /* Debug */,
+				0BABD9EB1E924C0800046FC0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 0B43C0D71E9227FB007F8E47 /* Project object */;
+	rootObject = 0BABD9C91E924C0800046FC0 /* Project object */;
 }

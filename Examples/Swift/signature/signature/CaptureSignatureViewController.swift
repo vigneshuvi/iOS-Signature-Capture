@@ -9,7 +9,6 @@
 import UIKit
 import QuartzCore
 
-let USER_SIGNATURE_PATH = "user_signature_path"
 
 protocol CaptureSignatureViewDelegate {
     func processCompleted(_ signImage: UIImage)
