@@ -31,7 +31,7 @@
 		0B43C0E91E9227FB007F8E47 /* iOSSignatureCaptureTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSSignatureCaptureTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B43C0EE1E9227FB007F8E47 /* iOSSignatureCaptureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSSignatureCaptureTests.swift; sourceTree = "<group>"; };
 		0B43C0F01E9227FB007F8E47 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0B43C1021E9230D6007F8E47 /* UviSignatureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UviSignatureView.swift; path = Lib/Swift/UviSignatureView.swift; sourceTree = SOURCE_ROOT; };
+		0B43C1021E9230D6007F8E47 /* UviSignatureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UviSignatureView.swift; path = ../Lib/Swift/UviSignatureView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */

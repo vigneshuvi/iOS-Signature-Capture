@@ -11,7 +11,8 @@ import QuartzCore
         
 
 public let USER_SIGNATURE_PATH = "user_signature_path"
-        
+  
+@IBDesignable
 public class UviSignatureView: UIView {
     var signPath: UIBezierPath = UIBezierPath()
     var previousPoint: CGPoint  = CGPoint.init(x: 0, y: 0)
@@ -30,7 +31,7 @@ public class UviSignatureView: UIView {
     }
     
     
-    init(_ coder: NSCoder? = nil) {
+    public init(_ coder: NSCoder? = nil) {
         if let coder = coder {
             super.init(coder: coder)!
         }
@@ -52,7 +53,7 @@ public class UviSignatureView: UIView {
     }
 
    // Configurate the line Width
-   func initialize() {
+   internal func initialize() {
         signPath = UIBezierPath();
         signPath.lineWidth = 2.0;            // Configurate the line Width
         self.isUserInteractionEnabled = true;
@@ -78,7 +79,7 @@ public class UviSignatureView: UIView {
             object: nil);
     }
     
-    func placeholderPoint() -> CGPoint {
+    internal func placeholderPoint() -> CGPoint {
         let height:CGFloat = self.bounds.size.height;
         
         let bottom:CGFloat = 0.90;
@@ -91,7 +92,7 @@ public class UviSignatureView: UIView {
     }
     
     // Set background Lines
-    func backgroundLines()-> NSArray {
+    internal func backgroundLines()-> NSArray {
         var bgLinges = NSArray();
         let width:CGFloat = self.bounds.size.width;
         let height:CGFloat = self.bounds.size.height;
@@ -114,7 +115,7 @@ public class UviSignatureView: UIView {
     }
     
     // Set background Lines
-    func pathArray(_ array:NSMutableArray)-> NSMutableArray {
+    public func pathArray(_ array:NSMutableArray)-> NSMutableArray {
         if self.pathArray == nil {
             pathArray = NSMutableArray();
         }
@@ -158,12 +159,12 @@ public class UviSignatureView: UIView {
     }
     
     // eraseRecognizer method triggers while long press the view.
-    func eraseRecognizer(_ recognizer:UILongPressGestureRecognizer) {
+    public func eraseRecognizer(_ recognizer:UILongPressGestureRecognizer) {
         self.erase()
     }
     
     // Erase the Siganture view by initial the new path.
-    func erase() {
+    internal func erase() {
          //signPath.closePath()
         UserDefaults.standard.removeObject(forKey: USER_SIGNATURE_PATH);
         UserDefaults.standard.synchronize();
@@ -173,18 +174,18 @@ public class UviSignatureView: UIView {
         self.setNeedsDisplay(); // Update the view.
     }
     
-    func signatureExists()->Bool {
+    public func signatureExists()->Bool {
         return self.pathArray.count > 0;
     }
     
-    func captureSignature() {
+    public func captureSignature() {
         pathArray.add(signPath);
         let saveData:Data = NSKeyedArchiver.archivedData(withRootObject: pathArray);
         UserDefaults.standard.set(saveData, forKey: USER_SIGNATURE_PATH)
         UserDefaults.standard.synchronize();
     }
     
-    func signatureImage(_ text : NSString, position : CGPoint)-> UIImage {
+    public func signatureImage(_ text : NSString, position : CGPoint)-> UIImage {
         UIGraphicsBeginImageContext(self.bounds.size);
     
         if(!text.isEqual(to: "")) {
