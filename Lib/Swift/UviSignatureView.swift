@@ -10,7 +10,8 @@ import UIKit
 import QuartzCore
         
 
-
+let USER_SIGNATURE_PATH = "user_signature_path"
+        
 class UviSignatureView: UIView {
     var signPath: UIBezierPath = UIBezierPath()
     var previousPoint: CGPoint  = CGPoint.init(x: 0, y: 0)
