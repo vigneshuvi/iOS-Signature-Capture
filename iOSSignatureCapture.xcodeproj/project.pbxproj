@@ -11,7 +11,6 @@
 		0B43C0EF1E9227FB007F8E47 /* iOSSignatureCaptureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B43C0EE1E9227FB007F8E47 /* iOSSignatureCaptureTests.swift */; };
 		0B43C0F11E9227FB007F8E47 /* iOSSignatureCapture.h in Headers */ = {isa = PBXBuildFile; fileRef = 0B43C0E31E9227FB007F8E47 /* iOSSignatureCapture.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0B43C1061E923632007F8E47 /* UviSignatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B43C1051E923632007F8E47 /* UviSignatureView.swift */; };
-		0B43C1071E923632007F8E47 /* UviSignatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B43C1051E923632007F8E47 /* UviSignatureView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -219,7 +218,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0B43C1071E923632007F8E47 /* UviSignatureView.swift in Sources */,
 				0B43C0EF1E9227FB007F8E47 /* iOSSignatureCaptureTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

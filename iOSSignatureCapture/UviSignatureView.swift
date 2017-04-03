@@ -21,6 +21,7 @@ public class UviSignatureView: UIView {
     var lineWidth : CGFloat = 0.0;
     let placeHolderString: NSString = "Sign here";
     
+
     public required convenience init(coder aDecoder: NSCoder) {
         self.init(aDecoder)
         self.initialize()
@@ -29,7 +30,6 @@ public class UviSignatureView: UIView {
     public override func layoutSubviews() {
         super.layoutSubviews()
     }
-    
     
     public init(_ coder: NSCoder? = nil) {
         if let coder = coder {
@@ -47,11 +47,13 @@ public class UviSignatureView: UIView {
         self.initialize()
     }
     
+    
     func midpoint(_ p0: CGPoint, p1: CGPoint) -> CGPoint {
         let mid :CGPoint = CGPoint.init(x: ((p0.x + p1.x) / 2.0), y: ((p0.y + p1.y) / 2.0))
         return mid;
     }
 
+    
    // Configurate the line Width
    internal func initialize() {
         signPath = UIBezierPath();
@@ -114,6 +116,7 @@ public class UviSignatureView: UIView {
         return bgLinges;
     }
     
+    
     // Set background Lines
     public func pathArray(_ array:NSMutableArray)-> NSMutableArray {
         if self.pathArray == nil {
@@ -127,6 +130,7 @@ public class UviSignatureView: UIView {
         return pathArray;
     }
 
+    
     // panReconizer method triggers while touch the view.
     func panRecognizer(_ recognizer:UIPanGestureRecognizer) {
         let currentPoint = recognizer.location(in: self);
@@ -158,6 +162,7 @@ public class UviSignatureView: UIView {
         self.setNeedsDisplay(); // Update the view.
     }
     
+     
     // eraseRecognizer method triggers while long press the view.
     public func eraseRecognizer(_ recognizer:UILongPressGestureRecognizer) {
         self.erase()
@@ -210,7 +215,6 @@ public class UviSignatureView: UIView {
         UIGraphicsEndImageContext();
         return image;
     }
-
 
     // Only override drawRect: if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
