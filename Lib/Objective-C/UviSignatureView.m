@@ -39,6 +39,12 @@ static CGPoint midpoint(CGPoint p0, CGPoint p1) {
     [signPath setLineCapStyle:kCGLineCapRound];
     [signPath setLineJoinStyle:kCGLineJoinRound];
     
+    // Added the Tap Reconginzer for capture the touches
+    UITapGestureRecognizer *tapReconizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapReconizer:)];
+     [tapReconizer setNumberOfTouchesRequired : 1];
+     [tapReconizer setNumberOfTapsRequired: 1];
+    [self addGestureRecognizer:tapReconizer];
+    
     // Added the Pan Reconginzer for capture the touches
     UIPanGestureRecognizer *panReconizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panReconizer:)];
     panReconizer.maximumNumberOfTouches = panReconizer.minimumNumberOfTouches = 1;
@@ -47,10 +53,9 @@ static CGPoint midpoint(CGPoint p0, CGPoint p1) {
     // Erase when long press the view.
     [self addGestureRecognizer:[[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(erase)]];
     
-    // Erase when double tap the view.
-    UITapGestureRecognizer *tapReconizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(erase)];
-    [tapReconizer setNumberOfTouchesRequired : 2];
-    [self addGestureRecognizer:tapReconizer];
+    // Erase when long press view.
+    UILongPressGestureRecognizer *longReconizer = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(erase)];
+    [self addGestureRecognizer:longReconizer];
     
     // Erase the view when recieving a notification named "shake" from the NSNotificationCenter object
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(erase) name:@"shake" object:nil];
@@ -158,10 +163,23 @@ static CGPoint midpoint(CGPoint p0, CGPoint p1) {
 }
 
 // panReconizer method triggers while touch the view.
+- (void)tapReconizer:(UITapGestureRecognizer *)tab {
+    
+    CGPoint currentPoint = [tab locationInView:self];
+
+    CGPoint prevPoint = CGPointMake(currentPoint.x, currentPoint.y-2);
+    CGPoint midPoint = midpoint(currentPoint, prevPoint);
+    [signPath moveToPoint:currentPoint];
+    [signPath addLineToPoint:midPoint];
+    
+    [self setNeedsDisplay]; // Update the view.
+}
+
+// panReconizer method triggers while touch the view.
 - (void)panReconizer:(UIPanGestureRecognizer *)pan {
     
     CGPoint currentPoint = [pan locationInView:self];
-    CGPoint midPoint = midpoint(previousPoint, currentPoint);
+    CGPoint midPoint = midpoint(currentPoint, previousPoint);
     
     switch (pan.state) {
         case UIGestureRecognizerStateBegan:

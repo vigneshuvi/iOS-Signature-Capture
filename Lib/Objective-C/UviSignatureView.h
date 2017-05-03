@@ -25,6 +25,6 @@
 @property (nonatomic) CGFloat lineWidth;
 @property (nonatomic, readonly) BOOL signatureExists;
 - (void)captureSignature;
-- (UIImage*)signatureImage:(CGPoint)position text:(NSString*)text;
+- (UIImage*_Nullable)signatureImage:(CGPoint)position text:(NSString*_Nullable)text;
 
 @end

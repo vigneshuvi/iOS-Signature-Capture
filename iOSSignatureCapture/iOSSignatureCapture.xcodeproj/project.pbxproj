@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B5DC1E41EB9ADA6005C31B3 /* UviSignatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5DC1E31EB9ADA6005C31B3 /* UviSignatureView.swift */; };
 		0BABD9DC1E924C0800046FC0 /* iOSSignatureCapture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BABD9D21E924C0800046FC0 /* iOSSignatureCapture.framework */; };
 		0BABD9E11E924C0800046FC0 /* iOSSignatureCaptureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BABD9E01E924C0800046FC0 /* iOSSignatureCaptureTests.swift */; };
 		0BABD9E31E924C0800046FC0 /* iOSSignatureCapture.h in Headers */ = {isa = PBXBuildFile; fileRef = 0BABD9D51E924C0800046FC0 /* iOSSignatureCapture.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0BABD9ED1E924C4600046FC0 /* UviSignatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BABD9EC1E924C4600046FC0 /* UviSignatureView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -24,13 +24,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0B5DC1E31EB9ADA6005C31B3 /* UviSignatureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UviSignatureView.swift; path = ../../Lib/Swift/UviSignatureView.swift; sourceTree = "<group>"; };
 		0BABD9D21E924C0800046FC0 /* iOSSignatureCapture.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = iOSSignatureCapture.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BABD9D51E924C0800046FC0 /* iOSSignatureCapture.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iOSSignatureCapture.h; sourceTree = "<group>"; };
 		0BABD9D61E924C0800046FC0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0BABD9DB1E924C0800046FC0 /* iOSSignatureCaptureTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSSignatureCaptureTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BABD9E01E924C0800046FC0 /* iOSSignatureCaptureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSSignatureCaptureTests.swift; sourceTree = "<group>"; };
 		0BABD9E21E924C0800046FC0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0BABD9EC1E924C4600046FC0 /* UviSignatureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UviSignatureView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,7 +73,7 @@
 		0BABD9D41E924C0800046FC0 /* iOSSignatureCapture */ = {
 			isa = PBXGroup;
 			children = (
-				0BABD9EC1E924C4600046FC0 /* UviSignatureView.swift */,
+				0B5DC1E31EB9ADA6005C31B3 /* UviSignatureView.swift */,
 				0BABD9D51E924C0800046FC0 /* iOSSignatureCapture.h */,
 				0BABD9D61E924C0800046FC0 /* Info.plist */,
 			);
@@ -152,7 +152,7 @@
 					0BABD9D11E924C0800046FC0 = {
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = 7FUQA46NH7;
-						LastSwiftMigration = 0810;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 					0BABD9DA1E924C0800046FC0 = {
@@ -202,7 +202,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0BABD9ED1E924C4600046FC0 /* UviSignatureView.swift in Sources */,
+				0B5DC1E41EB9ADA6005C31B3 /* UviSignatureView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -412,6 +412,7 @@
 				0BABD9E81E924C0800046FC0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0BABD9E91E924C0800046FC0 /* Build configuration list for PBXNativeTarget "iOSSignatureCaptureTests" */ = {
 			isa = XCConfigurationList;
@@ -420,6 +421,7 @@
 				0BABD9EB1E924C0800046FC0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
